@@ -1,0 +1,7 @@
+
+.degrade{
+    background: var(--black);  
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
