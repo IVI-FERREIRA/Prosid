@@ -1,0 +1,60 @@
+#form-contato {
+    margin-top: 2em;
+    background-color: rgb(56, 56, 56);
+    color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
+
+    text-align: start;
+    border-radius: 5px;
+}
+
+
+.titulo-f, .text-f {
+    font-size: 1.5em
+}
+
+#servico, #email, #name {
+    color: black;
+    font-size: 1em;
+    border-radius: 3px;
+    font-weight: 500;
+    margin: 0.5em 0 1.5em 0;
+    padding: 0.5em;
+}
+
+.sub-botao{
+    background: var(--azul);
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 1.6em;
+    margin-top: 1em;
+    font-family: var(--fonte-principal);
+    transition: all 0.5s;
+    padding: 0.3em 0 0.3em 0;
+}
+
+.sub-botao:hover{
+    background-color: var(--azul-claro);
+}
+
+
+
+.mensagem-ok {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 16px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: fade 0.5s ease-in-out;
+  }
+  
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
