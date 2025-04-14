@@ -12,28 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-
+    
         const assunto = `${categoria} - ${servicoInput.value}`;
         assuntoHidden.value = assunto;
-
+    
         const nome = nomeInput.value.trim();
         const email = emailInput.value.trim();
         const mensagem = mensagemInput.value.trim();
-
+    
         mensagemFinal.value = `Nome: ${nome}\nE-mail: ${email}\n\nMensagem do cliente:\n${mensagem}`;
-
-        // 🔥 Criar um botão "submit" real e clicar nele
-        const fakeBtn = document.createElement('button');
-        fakeBtn.type = 'submit';
-        fakeBtn.style.display = 'none';
-        form.appendChild(fakeBtn);
-        fakeBtn.click();
-        form.removeChild(fakeBtn);
-
-        // Mostrar balão
+    
+        // Mostrar balão de confirmação
         document.getElementById('msg-ok').style.display = 'block';
-
-        // Resetar depois
+    
+        // Enviar o formulário utilizando requestSubmit
+        form.requestSubmit();
+    
+        // Limpar o formulário após o envio
         setTimeout(() => {
             form.reset();
         }, 1000);
