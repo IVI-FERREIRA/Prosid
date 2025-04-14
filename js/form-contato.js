@@ -1,26 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-contato');
-    const nomeInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const servicoInput = document.getElementById('servico');
-    const mensagemInput = document.getElementById('mensagem');
-    const assuntoHidden = document.getElementById('assunto-email');
-    const categoria = document.querySelector('h1')?.innerText || 'Serviço';
+    const form = document.getElementById("form-contato");
   
-    form.addEventListener('submit', function () {
-      const nome = nomeInput.value.trim();
-      const email = emailInput.value.trim();
-      const mensagem = mensagemInput.value.trim();
-      const servico = servicoInput.value;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
   
-      // Atualiza o campo de mensagem visível
-      mensagemInput.value = `Nome: ${nome}\nE-mail: ${email}\n\nMensagem do cliente:\n${mensagem}`;
+      const nome = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const servico = document.getElementById("servico").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
   
-      // Atualiza o campo oculto do assunto
-      assuntoHidden.value = `${categoria} - ${servico}`;
+      // 🔗 URL do Google Forms (formResponse, não o preview)
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScNYVjfrAf1_oA7rN2kUDEdp0BTT3OwGU5ocFUVNDbLtJZljg/formResponse";
   
-      // Mostra mensagem de sucesso
-      document.getElementById('msg-ok').style.display = 'block';
+      // 📨 Monta os dados
+      const formData = new URLSearchParams();
+      formData.append("entry.1305803274", servico);   // Serviço
+      formData.append("entry.1570079111", nome);      // Nome
+      formData.append("entry.2040536725", email);     // E-mail
+      formData.append("entry.537648474", mensagem);   // Mensagem
+  
+      // 🚀 Envia os dados para o Google Forms
+      fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
+      });
+  
+      // ✅ Exibe mensagem de sucesso "fake"
+      document.getElementById("msg-ok").style.display = "block";
+  
+      // ⏳ Limpa o formulário depois de 1,5s
+      setTimeout(() => {
+        form.reset();
+      }, 1500);
     });
   });
   
