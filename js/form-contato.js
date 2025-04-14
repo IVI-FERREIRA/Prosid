@@ -10,27 +10,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const categoria = document.querySelector('h1')?.innerText || 'Serviço';
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-    
+    // Atualiza os campos hidden ao mudar qualquer campo
+    form.addEventListener('input', () => {
         const assunto = `${categoria} - ${servicoInput.value}`;
         assuntoHidden.value = assunto;
-    
+
         const nome = nomeInput.value.trim();
         const email = emailInput.value.trim();
         const mensagem = mensagemInput.value.trim();
-    
+
         mensagemFinal.value = `Nome: ${nome}\nE-mail: ${email}\n\nMensagem do cliente:\n${mensagem}`;
-    
-        // Mostrar balão de confirmação
+    });
+
+    // Quando o formulário for enviado, só mostra o balão (sem bloquear envio)
+    form.addEventListener('submit', () => {
         document.getElementById('msg-ok').style.display = 'block';
-    
-        // Enviar o formulário utilizando requestSubmit
-        form.requestSubmit();
-    
-        // Limpar o formulário após o envio
+
+        // Limpa depois (opcional)
         setTimeout(() => {
             form.reset();
-        }, 1000);
+        }, 2000);
     });
 });
