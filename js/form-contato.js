@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = emailInput.value.trim();
         const mensagem = mensagemInput.value.trim();
 
-        mensagemFinal.value = `Nome: ${nome}\nE-mail: ${email}\n\nMensagem do cliente:\n${mensagem}`;
+        mensagemInput.value = `Nome: ${nome}\nE-mail: ${email}\n\nMensagem do cliente:\n${mensagem}`;
     });
 
     // Quando o formulário for enviado, só mostra o balão (sem bloquear envio)

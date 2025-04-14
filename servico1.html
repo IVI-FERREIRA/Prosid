@@ -136,7 +136,7 @@
             <div class="form">
                 <form action="https://formsubmit.co/conta.ivi.ferr@gmail.com" method="POST" id="form-contato">
                     <label class="titulo-f" for="servico">Escolha o serviço desejado:</label>
-                    <select id="servico" required>
+                    <select id="servico" name="servico" required>
                         <option value="" selected disabled hidden>-- Selecione --</option>
                         <option value="Consultoria em TI personalizada">Consultoria em TI personalizada</option>
                         <option value="Desenho de MVP para startups">Desenho de MVP para startups</option>
@@ -152,11 +152,11 @@
                     <input type="email" name="email" id="email" placeholder="seu@email.com" required>
 
                     <label class="text-f" for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" rows="8" maxlength="800" required></textarea>
+                    <textarea id="mensagem" name="mensage" rows="8" maxlength="800" required></textarea>
 
                     <!-- Campos que o JS vai preencher automaticamente -->
                     <input type="hidden" name="subject" id="assunto-email">
-                    <input type="hidden" name="message" id="mensagem-final">
+                   
 
                     <!-- Extras -->
                     <input type="hidden" name="_captcha" value="true">
