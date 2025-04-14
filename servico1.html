@@ -135,37 +135,34 @@
 
             <div class="form">
                 <form action="https://formsubmit.co/conta.ivi.ferr@gmail.com" method="POST" id="form-contato">
-                    <label class="titulo-f" for="servico">Escolha o serviço desejado:</label>
+                    <label for="servico">Escolha o serviço desejado:</label>
                     <select id="servico" name="servico" required>
-                        <option value="" selected disabled hidden>-- Selecione --</option>
-                        <option value="Consultoria em TI personalizada">Consultoria em TI personalizada</option>
-                        <option value="Desenho de MVP para startups">Desenho de MVP para startups</option>
-                        <option value="Projetos de redes e conectividade">Projetos de redes e conectividade</option>
-                        <option value="Estruturação em cloud ou local">Estruturação em cloud ou local</option>
-                        <option value="Suporte à transformação digital">Suporte à transformação digital</option>
+                      <option value="" disabled selected hidden>-- Selecione --</option>
+                      <option value="Consultoria em TI personalizada">Consultoria em TI personalizada</option>
+                      <option value="Desenho de MVP para startups">Desenho de MVP para startups</option>
+                      <option value="Projetos de redes e conectividade">Projetos de redes e conectividade</option>
+                      <option value="Estruturação em cloud ou local">Estruturação em cloud ou local</option>
+                      <option value="Suporte à transformação digital">Suporte à transformação digital</option>
                     </select>
-
-                    <label class="text-f" for="text">Seu Nome:</label>
-                    <input type="text" name="name" id="name" placeholder="Nome Completo" required>
-
-                    <label class="text-f" for="email">Seu e-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="seu@email.com" required>
-
-                    <label class="text-f" for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensage" rows="8" maxlength="800" required></textarea>
-
-                    <!-- Campos que o JS vai preencher automaticamente -->
+                  
+                    <label for="name">Seu nome:</label>
+                    <input type="text" id="name" name="name" required>
+                  
+                    <label for="email">Seu e-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                  
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="message" rows="6" required></textarea>
+                  
+                    <!-- Campo que o JS vai atualizar com assunto -->
                     <input type="hidden" name="subject" id="assunto-email">
-                   
-
-                    <!-- Extras -->
-                    <input type="hidden" name="_captcha" value="true">
-                    <div id="msg-ok" style="display:none;" class="mensagem-ok">
-                        Obrigado! Sua mensagem foi enviada com sucesso, responderemos em breve.
-                      </div>
-
-                    <button class="sub-botao" type="submit">Enviar</button>
-                </form>
+                  
+                    <div id="msg-ok" style="display:none; margin-top: 10px; color: green;">
+                      Obrigado! Sua mensagem foi enviada com sucesso.
+                    </div>
+                  
+                    <button type="submit">Enviar</button>
+                  </form>
 
             </div>
         </section>
