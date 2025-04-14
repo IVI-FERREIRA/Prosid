@@ -134,7 +134,7 @@
             </ul>
 
             <div class="form">
-                <form  method="POST" id="form-contato">
+                <form method="POST" id="form-contato">
                     <label for="servico">Escolha o serviço desejado:</label>
                     <select id="servico" name="servico" required>
                       <option value="" disabled selected hidden>-- Selecione --</option>
@@ -152,15 +152,15 @@
                     <input type="email" id="email" name="email" required>
                   
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="message" rows="6" required></textarea>
+                    <textarea id="mensagem" name="message" rows="6" maxlength="800" required></textarea>
                   
-                                    
                     <div id="msg-ok" style="display:none; margin-top: 10px; color: green;">
                       Obrigado! Sua mensagem foi enviada com sucesso.
                     </div>
                   
                     <button type="submit">Enviar</button>
                   </form>
+                  
 
             </div>
         </section>
