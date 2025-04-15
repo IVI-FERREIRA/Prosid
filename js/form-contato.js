@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
             `entry.537648474=${encodeURIComponent(mensagem)}`;
 
         // 🚀 Envia os dados para o Google Forms
-        fetch(formUrl, {
+        fetch("https://docs.google.com/forms/d/e/1FAIpQLScW3xNaJqio6tcY3yS7fBLpgtcrRCAq7Gp5LK_4CFRIr2150w/formResponse", {
             method: "POST",
             mode: "no-cors",
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+              "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData,
-        });
+            body: "entry.1305803274=TesteServico&entry.1570079111=IviTeste&entry.2040536725=ivi@email.com&entry.537648474=Mensagem de teste pelo fetch direto"
+          });
 
         // Mostrar balão
         document.getElementById("msg-ok").style.display = "block";
